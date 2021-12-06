@@ -23,7 +23,7 @@ function TopNav() {
             <Box sx={{ flexGrow: 1 }}>
                 <AppBar position="static" id="nav-container">
                     <Toolbar>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                    <Typography variant="h  6" component="div" sx={{ flexGrow: 1 }}>
                         App Name and Logo
                     </Typography>
                     <Link className="nav-link" to="/"><Button color="inherit">Home</Button></Link>

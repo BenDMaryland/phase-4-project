@@ -15,6 +15,7 @@ saim = User.create(
       photographer: true,
        password_digest: "12345")
 
+
 dimitri = User.create(
     name: "Dimitri",
      email: "dimitri@dimitri.com", 
@@ -61,8 +62,8 @@ Review.create(
      comment: "that looks beat up",
       rating: 3 )
 
-Review.create
-(car_id: lambo.id, 
+Review.create(
+    car_id: lambo.id, 
     user_id: ben.id,  
     comment: "Wow!", 
     rating: 5 )
