@@ -1,0 +1,119 @@
+.home-pic {
+  max-height: 485px;
+  position: relative;
+  -webkit-transition: margin-top 0.2s;
+  transition: margin-top 0.2s;
+  background-position: 0 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+}
+
+#nav-container {
+  background-color: maroon;
+}
+
+/* Signup Modal */
+
+.modalBackground {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(200, 200, 200);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContainer {
+  width: 500px;
+  height: 500px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.modalContainer .title {
+  display: inline-block;
+  text-align: center;
+  /* margin-top: 10px; */
+}
+
+.titleCloseBtn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.titleCloseBtn button {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.modalContainer .body {
+  /* flex: 50%; */
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.modalContainer .footer {
+  flex: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContainer .footer button {
+  width: 150px;
+  height: 45px;
+  margin: 10px;
+  border: none;
+  background-color: cornflowerblue;
+  color: white;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#cancelBtn {
+  background-color: crimson;
+}
+
+#about-us {
+  font-family: Snell Roundhand, cursive;
+  font-size: 52px;
+  color: rgb(150, 149, 137);
+  line-height: 1.4;
+  text-align: center;
+}
+
+#line {
+  width: 50px;
+  margin-top: 24px;
+}
+
+.about-container {
+  text-align: center;
+}
+
+.about-info {
+  font-family: Quicksand, sans-serif;
+}
+
+.about-sub-header {
+  font-weight: 200;
+  font-size: 25px;
+  color: rgb(27, 27, 27);
+}
