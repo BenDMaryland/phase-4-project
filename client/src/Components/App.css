@@ -23,7 +23,14 @@
   color: white;
 }
 
-/* Signup Modal */
+/* Signup */
+
+#signup-container {
+  padding: 50px;
+  /* width: 300px; */
+}
+
+/* Login Modal */
 
 .modalBackground {
   width: 100vw;
@@ -121,4 +128,11 @@
   font-weight: 200;
   font-size: 25px;
   color: rgb(27, 27, 27);
+}
+
+#login-btn {
+  color: white;
+}
+
+#signup-btn {
 }
