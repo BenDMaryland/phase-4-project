@@ -1,42 +1,13 @@
 import React, { useState } from 'react'
 
-function Modal({ setIsModalOpen, changeHanldler, submitHandler }) {
+function Modal({ setIsModalOpen, changeHanldler, submitHandler, loginDetails }) {
 
-    const [users, setusers] = useState("")
-    const [loginDetails, setloginDetails] = useState({
-        email: "",
-        password: ""
-
-    })
 
     const handleClick = () => {
         setIsModalOpen(false)
     }
 
-    function changeHanldler(e) {
-        setloginDetails(data => data = { ...data, [e.target.name]: e.target.value })
-    }
 
-
-    function submitHandler(e) {
-        e.preventDefault()
-        console.log(e)
-        fetch("/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ 
-                email: loginDetails.email,
-                password: loginDetails.password
-                
-             }),
-        }).then((r) => {
-            if (r.ok) {
-                r.json().then((user) => setusers(user));
-            }
-        });
-    }
 
     return (
         <div>
