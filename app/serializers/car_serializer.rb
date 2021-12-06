@@ -1,3 +1,3 @@
 class CarSerializer < ActiveModel::Serializer
-  attributes :id, :owner_id, :photographer_id, :photo, :description, :model, :year
+  attributes :id, :owned_by_id, :photographed_by_id, :photo, :description, :model, :year
 end
