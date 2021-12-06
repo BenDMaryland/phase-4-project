@@ -63,7 +63,7 @@ function Modal({ setIsModalOpen, changeHanldler, submitHandler }) {
                                 <input onChange={changeHanldler} value={loginDetails.password} type="password" name="password" />
                             </div>
                         </div>
-                        <button>Login</button>
+                        <button id="login-btn">Login</button>
                     </form>
 
                     <div>
