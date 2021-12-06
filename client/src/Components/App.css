@@ -18,6 +18,11 @@
   background-color: maroon;
 }
 
+.nav-link {
+  text-decoration: none;
+  color: white;
+}
+
 /* Signup Modal */
 
 .modalBackground {

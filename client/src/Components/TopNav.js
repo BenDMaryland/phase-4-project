@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Modal from "./Modal"
-// import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 
@@ -26,9 +26,9 @@ function TopNav() {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         App Name and Logo
                     </Typography>
-                   <Button color="inherit">Home</Button>
-                     <Button color="inherit">About</Button>
-                    <Button color="inherit">Signup</Button>
+                    <Link className="nav-link" to="/"><Button color="inherit">Home</Button></Link>
+                     <Link className="nav-link" to="about"><Button color="inherit">About</Button></Link>
+                     <Link className="nav-link" to="signup"><Button color="inherit">Signup</Button></Link>
                     <Button onClick={toggleModal}  color="inherit">Login</Button>
                     </Toolbar>
                 </AppBar>
