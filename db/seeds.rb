@@ -1,3 +1,9 @@
+Car.destroy_all
+Car.reset_pk_sequence
+Review.destroy_all
+Review.reset_pk_sequence
+User.destroy_all
+User.reset_pk_sequence
 
 puts "seeding start"
 
@@ -7,20 +13,20 @@ ben= User.create(
     name: "Been", 
     email: "ben@ben.com", 
     photographer: false,
-     password_digest: "123")
+     password: "123")
 
 saim = User.create(
     name: "Saim",
      email: "saim@saim.com",
       photographer: true,
-       password_digest: "12345")
+       password: "12345")
 
 
 dimitri = User.create(
     name: "Dimitri",
      email: "dimitri@dimitri.com", 
      photographer: false, 
-     password_digest: "1234567")
+     password: "1234567")
 
 
 puts "seeding cars"
