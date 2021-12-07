@@ -27,6 +27,7 @@ function TopNav({ changeHanldler, submitHandler, loginDetails, user }) {
                             App Name and Logo
                         </Typography>
                         <Link className="nav-link" to="/"><Button color="inherit">Home</Button></Link>
+                        <Link className="nav-link" to="/cars"><Button color="inherit">Cars</Button></Link>
                         <Link className="nav-link" to="about"><Button color="inherit">About</Button></Link>
                         <Link className="nav-link" to="signup"><Button color="inherit">Signup</Button></Link>
                         <Button onClick={toggleModal} color="inherit">Login</Button>
