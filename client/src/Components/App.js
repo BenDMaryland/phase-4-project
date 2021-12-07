@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 function App() {
 
 
-=======
+
   // This useState is for displaying car info
 
   const [carData, SetCarData] = useState([])
@@ -30,7 +30,7 @@ function App() {
 
 
 
-=======
+
   // for displaying car info 
 
   useEffect(() => {
