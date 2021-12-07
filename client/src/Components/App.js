@@ -7,7 +7,11 @@ import { Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 
 function App() {
-   // This useState is for displaying car info
+
+
+=======
+  // This useState is for displaying car info
+
   const [carData, SetCarData] = useState([])
   //  This Usestate is for the current user who is loggedin
   const [user, setuser] = useState("")
@@ -17,25 +21,31 @@ function App() {
     password: ""
   })
 
-const [newUser, setnewUser] = useState({
-  name: "",
-  password: "",
-  email: "",
-  photographer: ""
-})
+  const [newUser, setnewUser] = useState({
+    name: "",
+    password: "",
+    email: "",
+    photographer: ""
+  })
 
-    // for displaying car info 
+
+
+=======
+  // for displaying car info 
+
   useEffect(() => {
     fetch("/cars")
       .then(res => res.json())
       .then(data => SetCarData(data))
   }, [])
 
+  
   // for chaning the form to signup 
   function newUserChangeHanldler(e) {
     setnewUser(data => data = { ...data, [e.target.name]: e.target.value })
  
   }
+
 
   //submitting new user requests
   function newUserSubmitHandler(e) {
@@ -104,7 +114,11 @@ const [newUser, setnewUser] = useState({
         <Route path="/about/*" element={<About />} />
         <Route path="/signup/*" element={<SignupForm newUserSubmitHandler={newUserSubmitHandler} newUserChangeHanldler={newUserChangeHanldler} newUser={newUser}  />} />
       </Routes>
+
        <CardContainer carData={carData}/>
+
+
+
     </div>
   );
 
