@@ -125,13 +125,19 @@ function App() {
       SetCarData((cars) => [...cars, addedCar]);
   }
 
+  function handleDeleteCar(deletedCar) {
+    SetCarData((cars) =>
+      cars.filter((car) => car.id !== deletedCar.id)
+    );
+  }
+
   return (
     <div className="App">
       <TopNav changeHanldler={changeHanldler} submitHandler={submitHandler} loginDetails={loginDetails} user={user} handleLogout={handleLogout} />
       <Routes >
         <Route path="/about/*" element={<About />} />
         <Route path="/signup/*" element={<SignupForm newUserSubmitHandler={newUserSubmitHandler} newUserChangeHanldler={newUserChangeHanldler} newUser={newUser} />} />
-        <Route exact path="/cars" element={<CardContainer user={user} carData={carData} />} />
+        <Route exact path="/cars" element={<CardContainer handleDeleteCar={handleDeleteCar} user={user} carData={carData} />} />
         <Route path="/cars/*" element={<FullCar car={carData} />} />
         <Route path="/car-form" element={<AddCarForm handleAddCar={handleAddCar} user={user}/>} />
       </Routes>

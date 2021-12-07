@@ -1,7 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function CarCard({ car, user }) {
+function CarCard({ car, user, onDeleteCar }) {
+
+    function handleDeleteCar() {
+    fetch(`/cars/${car.id}`, {
+      method: "DELETE",
+    }).then((res) => {
+      if (res.ok) {
+        onDeleteCar(car);
+      }
+    });
+  }
+
     return (
 
         <div className="car-card">
@@ -12,6 +23,7 @@ function CarCard({ car, user }) {
             <p>Description: {car.description}</p>
             <p> Average score: {car.average_score}</p>
             <Link className="nav-link" to={"/cars/" + car.id} ><button color="inherit">More info</button></Link>
+            <button onClick={handleDeleteCar} color="inherit">Delete</button>
 
         </div>
     )
