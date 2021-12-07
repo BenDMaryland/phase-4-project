@@ -7,7 +7,11 @@ import { Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 
 function App() {
+
+
+=======
   // This useState is for displaying car info
+
   const [carData, SetCarData] = useState([])
   //  This Usestate is for the current user who is loggedin
   const [user, setuser] = useState("")
@@ -24,7 +28,11 @@ function App() {
     photographer: ""
   })
 
+
+
+=======
   // for displaying car info 
+
   useEffect(() => {
     fetch("/cars")
       .then(res => res.json())
@@ -106,7 +114,11 @@ function App() {
         <Route path="/about/*" element={<About />} />
         <Route path="/signup/*" element={<SignupForm newUserSubmitHandler={newUserSubmitHandler} newUserChangeHanldler={newUserChangeHanldler} newUser={newUser}  />} />
       </Routes>
-      <CardContainer carData={carData}/>
+
+       <CardContainer carData={carData}/>
+
+
+
     </div>
   );
 
