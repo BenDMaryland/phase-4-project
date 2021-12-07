@@ -10,7 +10,7 @@ puts "seeding start"
 puts "seeding users"
 
 ben= User.create(
-    name: "Been", 
+    name: "Ben", 
     email: "ben@ben.com", 
     photographer: false,
      password: "123")

@@ -12,6 +12,7 @@ function App() {
   const [carData, SetCarData] = useState("")
   //  This Usestate is for the current user who is loggedin
   const [user, setuser] = useState("")
+  const [session, setSession] = useState("")
   // This Use state is loggin in. 
   const [loginDetails, setloginDetails] = useState({
     email: "",
@@ -35,6 +36,13 @@ const location = useLocation()
       .then(data => SetCarData(data))
       .then(console.log("new fetch "))}
   }, [location])
+
+useEffect(() => {
+fetch("/me")
+.then(r=>r.json())
+  .then(data => setuser(data))
+
+}, [])
 
 
   // for chaning the form to signup 
@@ -104,7 +112,7 @@ const location = useLocation()
       <Routes >
         <Route path="/about/*" element={<About />} />
         <Route path="/signup/*" element={<SignupForm newUserSubmitHandler={newUserSubmitHandler} newUserChangeHanldler={newUserChangeHanldler} newUser={newUser}  />} />
-        <Route  exact path="/cars" element={<CardContainer carData={carData} />} />
+        <Route  exact path="/cars" element={<CardContainer user={user} carData={carData} />} />
         <Route path="/cars/*" element={<FullCar car={carData} />} />
       </Routes>
     </div>

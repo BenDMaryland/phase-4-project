@@ -1,5 +1,6 @@
-import { cardClasses } from '@mui/material'
+
 import React from 'react'
+import Reviews from './Reviews'
 import { Link } from 'react-router-dom'
 function FullCar({ car }) {
 
@@ -14,19 +15,11 @@ function FullCar({ car }) {
             <p>{car.model}</p>
             <p>{car.year}</p>
             <p>{car.description}</p>
-            <div> Reviews
-                 {car.reviews.map((review) => {
-                return (
-                    <>
-                        <p> Review</p>
-                        <p>{review.name}</p>
-                        <p>{review.comment}</p>
-                        <p>{review.rating}</p>
-                    </>
-                )})}
-            </div>
+            {<Reviews reviews={car.reviews} /> }
         </div>
-    )
+   
+   
+   )
 }
 
 export default FullCar
