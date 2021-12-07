@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function CarCard({ car, user, onDeleteCar }) {
+function CarCard({ setDOMUpdater, car, user, onDeleteCar }) {
 
     function handleDeleteCar() {
     fetch(`/cars/${car.id}`, {
@@ -22,7 +22,7 @@ function CarCard({ car, user, onDeleteCar }) {
             <p>Year: {car.year}</p>
             <p>Description: {car.description}</p>
             <p> Average score: {car.average_score}</p>
-            <Link className="nav-link" to={"/cars/" + car.id} ><button color="inherit">More info</button></Link>
+            <Link className="nav-link" to={"/cars/" + car.id} ><button onClick={() => setDOMUpdater(Math.random())} color="inherit">More info</button></Link>
             <button onClick={handleDeleteCar} color="inherit">Delete</button>
 
         </div>
