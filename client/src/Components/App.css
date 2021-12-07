@@ -187,3 +187,25 @@
   font-family: sans-serif;
   text-align: center;
 }
+div.car-card {
+  height: 340px;
+  float: left;
+  color: black;
+  margin-right: 5px;
+  margin-left: 5px;
+  border: 2px solid black;
+  background-color: white;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 5px;
+  border-radius: 10px 10px 10px 10px;
+  /* background-color: #adc5af; */
+
+  min-width: 365px;
+
+  padding: 6px;
+}
+
+.car-pic {
+  width: 300px;
+}
