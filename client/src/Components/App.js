@@ -3,12 +3,13 @@ import TopNav from './TopNav';
 import About from './About';
 import SignupForm from './SignupForm';
 import CardContainer from './CardContainer';
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react';
+import FullCar from './Fullcar';
 
 function App() {
   // This useState is for displaying car info
-  const [carData, SetCarData] = useState([])
+  const [carData, SetCarData] = useState("")
   //  This Usestate is for the current user who is loggedin
   const [user, setuser] = useState("")
   // This Use state is loggin in. 
@@ -23,14 +24,17 @@ function App() {
     email: "",
     photographer: ""
   })
-
+ /// Location is set based on the url after http://localhost:4000/ --- so if the url is  http://localhost:4000/cars location.pathname will be cars
+const location = useLocation()
 
   // for displaying car info 
   useEffect(() => {
-    fetch("/cars")
+  if (location.pathname.includes("cars") ){
+    fetch(`${location.pathname}`)
       .then(res => res.json())
       .then(data => SetCarData(data))
-  }, [])
+      .then(console.log("new fetch "))}
+  }, [location])
 
 
   // for chaning the form to signup 
@@ -71,7 +75,7 @@ function App() {
     function changeHanldler(e) {
       setloginDetails(data => data = { ...data, [e.target.name]: e.target.value })
     }
-  console.log(newUser)
+
 
     //submitting login requests
      function submitHandler(e) {
@@ -100,8 +104,9 @@ function App() {
       <Routes >
         <Route path="/about/*" element={<About />} />
         <Route path="/signup/*" element={<SignupForm newUserSubmitHandler={newUserSubmitHandler} newUserChangeHanldler={newUserChangeHanldler} newUser={newUser}  />} />
+        <Route  exact path="/cars" element={<CardContainer carData={carData} />} />
+        <Route path="/cars/*" element={<FullCar car={carData} />} />
       </Routes>
-      <CardContainer carData={carData}/>
     </div>
   );
 }
