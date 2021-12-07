@@ -4,9 +4,9 @@ function CarCard({car}) {
     return (
         <div className="car-card">
             <img src={car.photo} alt="" className="car-pic"/>
-            <p>{car.model}</p>
-            <p>{car.year}</p>
-            <p>{car.description}</p>
+            <p>Model: {car.model}</p>
+            <p>Year: {car.year}</p>
+            <p>Description: {car.description}</p>
         </div>
     )
 }

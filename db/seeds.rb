@@ -34,10 +34,10 @@ puts "seeding cars"
 honda = Car.create(
     owned_by_id: ben.id,   
     photographed_by_id: saim.id,
-     photo:"https://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX176/43f27833-9727-49e2-a3f3-b00d96ab404d.JPG",
-      model:"Honda-CRV", 
-      year:2006,  
-      description: "As good as it was the day I bought it!!")
+     photo:"https://www.kienle.com/fileadmin/_processed_/1/c/csm_faszination-oldtimer-header-xs_33e6719298.jpg",
+      model:"Mercedes 300 SL", 
+      year:1965,  
+      description: "Delighted to offer this Mercedes-Benz 300SL disc brake-model, which is surely one of the finest examples on offer today. Presented in its original colour scheme was originally delivered new in June 1961.")
 
 lambo = Car.create(
     owned_by_id: dimitri.id, 
@@ -45,13 +45,14 @@ lambo = Car.create(
      photo: "https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/homepage/families-gallery/mobile/Aventador_ultimae_model_mobile.png",
       model: "Lamborghini Aventador", 
       year: 2021, 
-      description: "Super fast!!!")
+      description: "The 2021 Aventador SVJ Roadster delivers incredible performance with its robust V12 engine which provides a whopping 770 horsepower and 720 lb-ft of torque. This automobile can reach a top speed of 217 mph and go from 0 to 62 mph 2.9 seconds.")
 
 ford = Car.create(
     owned_by_id: saim.id,
-     model: "Ford something",
-      year: 2111, 
-      description: "It's a car")
+    photo: "https://assets-global.website-files.com/5a10aaa4d85f4b0001a53297/5a10aaa4d85f4b0001a541e5_2016-bmw-i8-white-car-hero-image-royalty-exotic-cars.jpg",
+     model: "BMW i8",
+      year: 2020, 
+      description: "You’re a different breed of cat. Hard-working. Out-of-the-box thinking. Some might even say you’re rebellious or revolutionary. The 2020 BMW i8 might just be your spirit animal in the form of a luxury hybrid sports car.")
 
 
 puts "seeding reviews"
