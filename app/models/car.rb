@@ -14,4 +14,12 @@ class Car < ApplicationRecord
     validates :model, presence: true 
     validates :year, presence: true 
 
+
+
+    def average_score
+    self.reviews.average( :rating).to_i
+    end
+
+
+
 end
