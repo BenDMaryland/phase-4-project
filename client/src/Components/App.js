@@ -35,8 +35,11 @@ function App() {
 
   // for chaning the form to signup 
   function newUserChangeHanldler(e) {
+
+    if (e.target.name == "photographer") {setnewUser(data => data = { ...data, [e.target.name]: e.target.checked })}
+    else{
     setnewUser(data => data = { ...data, [e.target.name]: e.target.value })
- 
+ }
   }
 
 
@@ -68,7 +71,7 @@ function App() {
     function changeHanldler(e) {
       setloginDetails(data => data = { ...data, [e.target.name]: e.target.value })
     }
-  
+  console.log(newUser)
 
     //submitting login requests
      function submitHandler(e) {
@@ -90,7 +93,6 @@ function App() {
          }
        });
      }
-
 
   return (
     <div className="App">
