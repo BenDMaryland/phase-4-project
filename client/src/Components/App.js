@@ -6,6 +6,7 @@ import CardContainer from './CardContainer';
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import FullCar from './Fullcar';
+import AddCarForm from './AddCarForm';
 
 function App() {
   // This useState is for displaying car info
@@ -120,6 +121,10 @@ function App() {
     });
   }
 
+     function handleAddCar(addedCar) {
+      SetCarData((cars) => [...cars, addedCar]);
+  }
+
   return (
     <div className="App">
       <TopNav changeHanldler={changeHanldler} submitHandler={submitHandler} loginDetails={loginDetails} user={user} handleLogout={handleLogout} />
@@ -128,6 +133,7 @@ function App() {
         <Route path="/signup/*" element={<SignupForm newUserSubmitHandler={newUserSubmitHandler} newUserChangeHanldler={newUserChangeHanldler} newUser={newUser} />} />
         <Route exact path="/cars" element={<CardContainer user={user} carData={carData} />} />
         <Route path="/cars/*" element={<FullCar car={carData} />} />
+        <Route path="/car-form" element={<AddCarForm handleAddCar={handleAddCar} user={user}/>} />
       </Routes>
     </div>
   );
