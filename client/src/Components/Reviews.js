@@ -23,12 +23,12 @@ function Reviews({ reviews }) {
         return (
             reviews.map((review) => {
                 return (
-                    <>
+                    <div key={Reviews.id}>
                  <p> Review</p>
                 <p>Name: {review.name}</p>
                 <p> Comment: {review.comment}</p>
                 <p>Rating: {review.rating}</p>
-                </>
+                </div>
                 )
             }
             ))

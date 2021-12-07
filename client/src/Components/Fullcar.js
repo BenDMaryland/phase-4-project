@@ -10,16 +10,16 @@ function FullCar({ car }) {
 
     return (
 
-        <div className="car-card" style={{ "height": "fit-content"}}  >
+        <div className="car-card" style={{ "height": "fit-content" }}  >
             <img src={car.photo} alt="" className="car-pic" />
             <p>{car.model}</p>
             <p>{car.year}</p>
             <p>{car.description}</p>
-            {<Reviews reviews={car.reviews} /> }
+            {<Reviews reviews={car.reviews} />}
         </div>
-   
-   
-   )
+
+
+    )
 }
 
 export default FullCar

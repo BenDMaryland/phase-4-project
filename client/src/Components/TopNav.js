@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 
 
-function TopNav({ changeHanldler, submitHandler, loginDetails, user }) {
+function TopNav({ changeHanldler, submitHandler, loginDetails, user, handleLogout }) {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -30,8 +30,9 @@ function TopNav({ changeHanldler, submitHandler, loginDetails, user }) {
                         <Link className="nav-link" to="/cars"><Button color="inherit">Cars</Button></Link>
                         <Link className="nav-link" to="about"><Button color="inherit">About</Button></Link>
                         <Link className="nav-link" to="signup"><Button color="inherit">Signup</Button></Link>
-                        <Button onClick={toggleModal} color="inherit">Login</Button>
-                        <p>The user is {user.name}</p>
+                        {user.name ? <Button color="inherit" onClick={handleLogout} >logout:  {user.name} </Button> : <Button onClick={toggleModal} color="inherit">Login</Button>}
+
+
                     </Toolbar>
                 </AppBar>
             </Box>
