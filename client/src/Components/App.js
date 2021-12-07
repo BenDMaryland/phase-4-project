@@ -2,11 +2,13 @@ import './App.css';
 import TopNav from './TopNav';
 import About from './About';
 import SignupForm from './SignupForm';
+import CardContainer from './CardContainer';
 import { Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 
 function App() {
-
+   // This useState is for displaying car info
+  const [carData, SetCarData] = useState([])
   //  This Usestate is for the current user who is loggedin
   const [user, setuser] = useState("")
   // This Use state is loggin in. 
@@ -22,6 +24,12 @@ const [newUser, setnewUser] = useState({
   photographer: ""
 })
 
+    // for displaying car info 
+  useEffect(() => {
+    fetch("/cars")
+      .then(res => res.json())
+      .then(data => SetCarData(data))
+  }, [])
 
   // for chaning the form to signup 
   function newUserChangeHanldler(e) {
@@ -96,6 +104,7 @@ const [newUser, setnewUser] = useState({
         <Route path="/about/*" element={<About />} />
         <Route path="/signup/*" element={<SignupForm newUserSubmitHandler={newUserSubmitHandler} newUserChangeHanldler={newUserChangeHanldler} newUser={newUser}  />} />
       </Routes>
+       <CardContainer carData={carData}/>
     </div>
   );
 

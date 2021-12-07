@@ -1,53 +1,24 @@
 import React from 'react'
-import { Grid, Paper, Avatar, Typography, TextField, Button } from '@material-ui/core'
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
-import Checkbox from '@material-ui/core/Checkbox';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-function SignupForm({ newUserSubmitHandler, newUserChangeHanldler, newUser}) {
-    const paperStyle = { padding: 20, width: 300, margin: "0 auto" }
-    const headerStyle = { margin: 0 }
-    const avatarStyle = { backgroundColor: '#1bbd7e' }
-    const marginTop = { marginTop: 5 }
+function SignupForm({newUserSubmitHandler, newUserChangeHanldler, newUser}) {
     return (
-        <>
-        
-        <Grid id="signup-container">
-            <Paper style={paperStyle}>
-                <Grid align='center'>
-                    <Avatar style={avatarStyle}>
-                        
-                    </Avatar>
-                    <h2 style={headerStyle}>Sign Up</h2>
-                    <Typography variant='caption' gutterBottom>Please fill this form to create an account !</Typography>
-                </Grid>
-                    <form onSubmit={newUserSubmitHandler} >
-                    <TextField fullWidth label='Name' name='name' value={newUser.name} onChange={newUserChangeHanldler}   placeholder="Enter your name" />
-                        <TextField fullWidth label='Email' name='email' value={newUser.email} onChange={newUserChangeHanldler}  placeholder="Enter your email" />
-                    <FormControl component="fieldset" style={marginTop}>
-                        <FormLabel component="legend"></FormLabel>
-                        <RadioGroup aria-label="gender" name="gender" style={{ display: 'initial' }}>
-                                <FormControlLabel  value="true" onChange={newUserChangeHanldler} name="photographer" control={<Radio />} label="Photographer" />
-                                <FormControlLabel value="false" onChange={newUserChangeHanldler} name="photographer" control={<Radio />} label="Car Owner" />
-                        </RadioGroup>
-                    </FormControl>
-                    {/* <TextField fullWidth label='Phone Number' placeholder="Enter your phone number" /> */}
-                        <TextField fullWidth label='Password' name='password' value={newUser.password} onChange={newUserChangeHanldler}  placeholder="Enter your password"/>
-                    {/* <TextField fullWidth label='Confirm Password' placeholder="Confirm your password"/> */}
-                    <FormControlLabel
-                        control={<Checkbox name="checkedA" />}
-                        label="I accept the terms and conditions."
-                    />
-                    <Button id="signup-btn" type='submit' variant='contained' color='primary'>Sign up</Button>
-                </form>
-            </Paper>
-        </Grid>
-        
-        </>
+        <div className="sign-up-form">
+            <AccountCircleIcon id="user-icon"/>
+            <h1>Sign Up <br /><span id="fill-out-form">Please fill this form to create an account</span></h1>
+            <form onSubmit={newUserSubmitHandler} action="">
+                <input type="name" className="input-box" placeholder="Username" name="name" value={newUser.name} onChange={newUserChangeHanldler}/>
+                <input type="email" className="input-box" placeholder="email" name="email" value={newUser.email} onChange={newUserChangeHanldler}/>
+                <input type="password" className="input-box" placeholder="Password" name="password" value={newUser.password} onChange={newUserChangeHanldler}/>
+                <p> <span><input type="checkbox"/></span> I accept terms and conditions</p>
+                <button type="button" className="sign-btn">Sign up</button>
+                <p> <span><input type="checkbox" onChange={newUserChangeHanldler}/></span>Photographer</p> 
+                <p> <span><input type="checkbox" onChange={newUserChangeHanldler}/></span>Car owner</p> 
+                <p>Do you have an account? <a href="#" className="sign-in-btn">Sign in</a></p>
+            </form>
+        </div>
     )
 }
-
 export default SignupForm
+                
+
