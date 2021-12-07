@@ -1,16 +1,15 @@
 import React from 'react'
+import CarCard from './CarCard'
 
 function CardContainer({carData}) {
     return (
         <div>
-           {carData.map((car) => {
-               return ( 
-                <div>
-                    <p>{car.description}</p>
-                     <img src={car.photo} alt="" />
-                </div>
+           <div>{carData.map((car) => {
+               return (
+                <CarCard key={car.id} car={car}/>
                )
            })}
+           </div>
         </div>
     )
 }
