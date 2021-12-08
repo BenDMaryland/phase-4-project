@@ -51,7 +51,9 @@ function FullCar({ car, user, setDOMUpdater }) {
         return (<p>one</p>)
     }
     else {
+        console.log(car)
         return (
+
             <div className="car-card" style={{ "maxHeight": "fit-content" }}  >
 
                 <img src={car.photo} alt="" className="car-pic" />
@@ -59,10 +61,12 @@ function FullCar({ car, user, setDOMUpdater }) {
                 <br/>
                 <p>Number of reviews: {car.total_reviews}</p>
                 {UpdateRequested ? <> <br /> <label>Car photo url: </label>   <input value={carUpdateObject.photo} onChange={updateChangeHandler} placeholder={car.photo} name='photo'  ></input> </> : null}
-                {UpdateRequested ? <> <br /> <label>Car model: </label>   <input value={carUpdateObject.model} onChange={updateChangeHandler} placeholder={car.model} name='model'  ></input> </> : <p>Model: {car.model}</p>}
+                {UpdateRequested ? <> <br /> <label>{car.owned_by.name}'s  </label>   <input value={carUpdateObject.model} onChange={updateChangeHandler} placeholder={car.model} name='model'  ></input> </> : <p>{car.owned_by.name}'s   {car.model}</p>}
                 {UpdateRequested ? <> <br /> <label>Car year: </label>   <input value={carUpdateObject.year} onChange={updateChangeHandler} placeholder={car.year} name='year'  ></input> </> : <p>Year: {car.year}</p>}
                 {UpdateRequested ? <> <br /> <label>Car description: </label>   <textarea value={carUpdateObject.description} onChange={updateChangeHandler} placeholder={car.description} name='description'  ></textarea> </> : <p>Description: {car.description}</p>}
                 {car.owned_by.id === user.id ? UpdateRequested ? <button onClick={updateSubmitHandler} > UPDATE!!!!</button> : <button type="button" onClick={() => setUpdateRequested(!UpdateRequested)} >Would You like to update?</button> : null}
+                <p>Reviews</p>
+                <p>_____________</p>
                 <ReviewAdder setDOMUpdater={setDOMUpdater} car={car} user={user}  />
                 {<Reviews reviews={car.reviews} />}
             </div>

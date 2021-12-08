@@ -1,7 +1,7 @@
 import React from 'react'
-
+import { Rating } from '@mui/material'
 function Reviews({ reviews }) {
- 
+
 
 
 
@@ -11,24 +11,27 @@ function Reviews({ reviews }) {
 
         return (
             <>
-                <p> Review</p>
                 <p>Name: {reviews[0].name}</p>
                 <p> Comment: {reviews[0].comment}</p>
-                <p>Rating: {reviews[0].rating}</p>
+                <Rating name="read-only" value={reviews[0].rating} readOnly />
             </>
         )
     }
-
     else {
         return (
             reviews.map((review) => {
+                console.log(review.comment)
                 return (
                     <div key={Reviews.id}>
-                 <p> Review</p>
-                <p>Name: {review.name}</p>
-                <p> Comment: {review.comment}</p>
-                <p>Rating: {review.rating}</p>
-                </div>
+                      
+                        <p >{review.name}</p>
+                        <Rating name="read-only" value={review.rating} readOnly />
+                        {review.comment == null ? null : <p> Comment: {review.comment}</p>}
+
+                    <br/>
+
+                        <br />
+                    </div>
                 )
             }
             ))
