@@ -4,7 +4,7 @@ import { Rating } from '@mui/material'
 
 function ReviewAdder({ user, car, setDOMUpdater }) {
 
-    const [updaterequested, setupdaterequested] = useState(false) ////// used for a turnery for updating comments 
+    const [updaterequested, setupdaterequested] = useState(true) ////// used for a turnery for updating comments 
     // general comment data for updating and making new comments/reviews 
     const [commentData, setcommentData] = useState({
         comment: "",
