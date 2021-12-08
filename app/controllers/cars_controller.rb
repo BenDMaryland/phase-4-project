@@ -15,6 +15,7 @@ class CarsController < ApplicationController
 
     def update
         car = find_car
+       
         car.update!(car_params)
         render json: car
     end
@@ -33,6 +34,7 @@ class CarsController < ApplicationController
     end
 
     def car_params
+       
         params.permit(:owned_by_id, :photographed_by_id, :photo, :description, :model, :year)
     end
 

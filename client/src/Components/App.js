@@ -7,6 +7,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import FullCar from './Fullcar';
 import AddCarForm from './AddCarForm';
+import { formControlUnstyledClasses } from '@mui/base';
 
 function App() {
   // This useState is for displaying car info
@@ -23,6 +24,8 @@ function App() {
     email: "",
     photographer: ""
   })
+
+  const [DOMUpdater, setDOMUpdater] = useState(0)
   /// Location is set based on the url after http://localhost:4000/ --- so if the url is  http://localhost:4000/cars location.pathname will be cars
   const location = useLocation()
 
@@ -34,7 +37,9 @@ function App() {
         .then(data => SetCarData(data))
         .then(console.log("new fetch "))
     }
-  }, [location])
+  }, [location.pathname, DOMUpdater])
+
+
 
 
 
@@ -73,8 +78,6 @@ function App() {
   //submitting new user requests
   function newUserSubmitHandler(e) {
     e.preventDefault()
-    console.log(e)
-    console.log(newUser)
     fetch("/signup", {
       method: "POST",
       headers: {
@@ -137,8 +140,8 @@ function App() {
       <Routes >
         <Route path="/about/*" element={<About />} />
         <Route path="/signup/*" element={<SignupForm newUserSubmitHandler={newUserSubmitHandler} newUserChangeHanldler={newUserChangeHanldler} newUser={newUser} />} />
-        <Route exact path="/cars" element={<CardContainer handleDeleteCar={handleDeleteCar} user={user} carData={carData} />} />
-        <Route path="/cars/*" element={<FullCar car={carData} />} />
+        <Route exact path="/cars" element={<CardContainer setDOMUpdater={setDOMUpdater} handleDeleteCar={handleDeleteCar} user={user} carData={carData} />} />
+        <Route path="/cars/*" element={<FullCar setDOMUpdater={setDOMUpdater} user={user} car={carData} />} />
         <Route path="/car-form" element={<AddCarForm handleAddCar={handleAddCar} user={user}/>} />
       </Routes>
     </div>
