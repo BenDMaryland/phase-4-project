@@ -62,33 +62,25 @@ function App() {
       });
   }
 
-
-
-
   // for chaning the form to signup 
   function newUserChangeHanldler(e) {
-
     if (e.target.name == "photographer") { setnewUser(data => data = { ...data, [e.target.name]: e.target.checked }) }
     else {
       setnewUser(data => data = { ...data, [e.target.name]: e.target.value })
     }
   }
 
-
   //submitting new user requests
   function newUserSubmitHandler(e) {
     e.preventDefault()
     fetch("/signup", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: {"Content-Type": "application/json",},
       body: JSON.stringify({
         email: newUser.email,
         password: newUser.password,
         name: newUser.name,
-        photographer: newUser.photographer
-      }),
+        photographer: newUser.photographer}),
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => setuser(user));

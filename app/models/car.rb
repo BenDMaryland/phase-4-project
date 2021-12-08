@@ -20,6 +20,9 @@ class Car < ApplicationRecord
     self.reviews.average( :rating).to_i
     end
 
+    def total_reviews
+      self.reviews.count
+    end
 
-
+    
 end
