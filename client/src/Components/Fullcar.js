@@ -4,6 +4,7 @@ import Reviews from './Reviews'
 import { Rating } from '@mui/material'
 import { Link } from 'react-router-dom'
 import ReviewAdder from './ReviewAdder'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 function FullCar({ car, user, setDOMUpdater }) {
 
     const [UpdateRequested, setUpdateRequested] = useState(false)
@@ -65,6 +66,7 @@ function FullCar({ car, user, setDOMUpdater }) {
                 {car.owned_by.id === user.id ? UpdateRequested ? <button onClick={updateSubmitHandler} > UPDATE!!!!</button> : <button type="button" onClick={() => setUpdateRequested(!UpdateRequested)} >Would You like to update?</button> : null}
                 <ReviewAdder setDOMUpdater={setDOMUpdater} car={car} user={user}  />
                 {<Reviews reviews={car.reviews} />}
+                <Link lassName="nav-link" to={"/cars"}><ArrowBackIcon onClick={() => setDOMUpdater(Math.random())}id="more-btn"/></Link>
             </div>
 
 
