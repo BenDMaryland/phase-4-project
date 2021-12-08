@@ -18,6 +18,9 @@ class User < ApplicationRecord
     validates :email, presence: true 
     validates :password_digest, presence: true 
 
+    def all_reviewed_ids
+        self.cars_reviewed.map {|car| car.id}
+    end
   
 
 end

@@ -39,10 +39,6 @@ function App() {
     }
   }, [location.pathname, DOMUpdater])
 
-
-
-
-
   // Sets user in state from the user session. 
   // this is for if a user refreshes the page or revisists the page
   useEffect(() => {
