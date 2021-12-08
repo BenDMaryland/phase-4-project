@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-function Modal({ setIsModalOpen, changeHanldler, submitHandler, loginDetails }) {
+
+function Modal({setIsModalOpen, changeHanldler, submitHandler, loginDetails }) {
 
 
     const handleClick = () => {
@@ -44,6 +45,7 @@ function Modal({ setIsModalOpen, changeHanldler, submitHandler, loginDetails }) 
 
                 </div>
             </div>
+            
         </div>
     )
 }

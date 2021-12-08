@@ -1,21 +1,14 @@
-.home-pic {
-  max-height: 485px;
-  position: relative;
-  -webkit-transition: margin-top 0.2s;
-  transition: margin-top 0.2s;
-  background-position: 0 0;
-  background-position: center;
-  background-repeat: no-repeat;
+html {
+  background-image: url("https://wallpaperaccess.com/full/49094.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: transparent;
 }
 
 #nav-container {
-  background-color: maroon;
+  /* background-color: maroon; */
+  background-color: black;
 }
 
 .nav-link {
@@ -188,7 +181,8 @@
   text-align: center;
 }
 div.car-card {
-  height: 550px;
+  /* height: 550px; */
+  max-height: 480px;
   float: left;
   color: black;
   margin-right: 10px;
@@ -205,6 +199,35 @@ div.car-card {
   padding: 15px;
 }
 
+div.car-card:hover {
+  z-index: 1;
+  transform: scale(1.05);
+  transition: ease-in 0.1s;
+}
+
 .car-pic {
-  width: 300px;
+  width: 350px;
+}
+
+#car-model {
+  text-align: center;
+  margin-top: 5px;
+}
+
+#delete-btn {
+  fill: red;
+  cursor: pointer;
+  float: left;
+}
+
+#more-btn {
+  float: right;
+}
+
+#star-rating {
+  margin-left: 87px;
+}
+
+#car-year {
+  text-align: center;
 }

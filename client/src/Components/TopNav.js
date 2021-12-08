@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 
 
-function TopNav({ changeHanldler, submitHandler, loginDetails, user, handleLogout }) {
+function TopNav({changeHanldler, submitHandler, loginDetails, user, handleLogout }) {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -18,8 +18,11 @@ function TopNav({ changeHanldler, submitHandler, loginDetails, user, handleLogou
         setIsModalOpen(true)
     }
 
+   
+
     return (
         <div >
+            
             <Box sx={{ flexGrow: 1 }}>
                 <AppBar position="static" id="nav-container">
                     <Toolbar>
@@ -38,7 +41,7 @@ function TopNav({ changeHanldler, submitHandler, loginDetails, user, handleLogou
                 </AppBar>
             </Box>
             {isModalOpen && <Modal changeHanldler={changeHanldler} submitHandler={submitHandler} loginDetails={loginDetails} setIsModalOpen={setIsModalOpen} />}
-
+            
 
         </div>
     )
