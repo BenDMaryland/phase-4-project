@@ -78,8 +78,6 @@ function App() {
   //submitting new user requests
   function newUserSubmitHandler(e) {
     e.preventDefault()
-    console.log(e)
-    console.log(newUser)
     fetch("/signup", {
       method: "POST",
       headers: {
