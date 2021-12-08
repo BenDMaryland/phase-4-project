@@ -7,6 +7,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import FullCar from './Fullcar';
 import AddCarForm from './AddCarForm';
+import Home from './Home';
 import { formControlUnstyledClasses } from '@mui/base';
 
 function App() {
@@ -126,6 +127,7 @@ function App() {
     <div className="App">
       <TopNav changeHanldler={changeHanldler} submitHandler={submitHandler} loginDetails={loginDetails} user={user} handleLogout={handleLogout} />
       <Routes >
+        <Route path="/" element={<Home/>}/>
         <Route path="/about/*" element={<About />} />
         <Route path="/signup/*" element={<SignupForm newUserSubmitHandler={newUserSubmitHandler} newUserChangeHanldler={newUserChangeHanldler} newUser={newUser} />} />
         <Route exact path="/cars" element={<CardContainer setDOMUpdater={setDOMUpdater} handleDeleteCar={handleDeleteCar} user={user} carData={carData} />} />

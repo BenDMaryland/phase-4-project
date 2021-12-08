@@ -5,6 +5,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import ReadMoreIcon from '@mui/icons-material/ReadMore';
 
 
+
 function CarCard({ setDOMUpdater, car, user, onDeleteCar }) {
   const [counter, setcounter] = useState(0)
 
@@ -39,6 +40,7 @@ function CarCard({ setDOMUpdater, car, user, onDeleteCar }) {
       }
     });
   }
+    
 
   return (
     <div className="car-card">
