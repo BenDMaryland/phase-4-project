@@ -101,7 +101,11 @@ html {
   font-size: 52px;
   color: rgb(150, 149, 137);
   line-height: 1.4;
+  color: white;
   text-align: center;
+}
+.about-sub-head{
+  color: white;
 }
 
 #line {
@@ -120,7 +124,7 @@ html {
 .about-sub-header {
   font-weight: 200;
   font-size: 25px;
-  color: rgb(27, 27, 27);
+  color: rgb(248, 246, 246);
 }
 
 .sign-up-form {
