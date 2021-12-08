@@ -63,7 +63,7 @@ function FullCar({ car, user, setDOMUpdater }) {
                 {UpdateRequested ? <> <br /> <label>Car year: </label>   <input value={carUpdateObject.year} onChange={updateChangeHandler} placeholder={car.year} name='year'  ></input> </> : <p>Year: {car.year}</p>}
                 {UpdateRequested ? <> <br /> <label>Car description: </label>   <textarea value={carUpdateObject.description} onChange={updateChangeHandler} placeholder={car.description} name='description'  ></textarea> </> : <p>Description: {car.description}</p>}
                 {car.owned_by.id === user.id ? UpdateRequested ? <button onClick={updateSubmitHandler} > UPDATE!!!!</button> : <button type="button" onClick={() => setUpdateRequested(!UpdateRequested)} >Would You like to update?</button> : null}
-                <ReviewAdder car={car} user={user}  />
+                <ReviewAdder setDOMUpdater={setDOMUpdater} car={car} user={user}  />
                 {<Reviews reviews={car.reviews} />}
             </div>
 
