@@ -5,9 +5,18 @@ import { Rating } from '@mui/material'
 import { Link } from 'react-router-dom'
 import ReviewAdder from './ReviewAdder'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-function FullCar({ car, user, setDOMUpdater }) {
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
-    const [UpdateRequested, setUpdateRequested] = useState(false)
+
+
+
+
+
+
+
+function FullCar({updateCar, car, user, setDOMUpdater }) {
+
+   const [UpdateRequested, setUpdateRequested] = useState(false)
     const [carUpdateObject, setcarUpdateObject] = useState({
     })
 
@@ -44,9 +53,31 @@ function FullCar({ car, user, setDOMUpdater }) {
     }
 
 
+     const handleLikeClick = (e) => {
+        const options = {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                user_id: user.id,
+                favorite: !car.favorite
+            })
+        };
+          fetch(`/cars/${car.id}`, options)
+            .then(resp => resp.json())
+            .then(data => {
+                if (data.success) {
+                    updateCar(data.data);
+                } else {
+                    console.log(data);
+                }
+            (setDOMUpdater(Math.random()))
+                
+            });
+    }
 
-
-    /// this is the component for rending a single car, here we can add reviews when we 
+    // this is the component for rending a single car, here we can add reviews when we 
     if (car == undefined || car.length === 0) return <p>No comments </p>
     else if (car.length >= 1) {
         return (<p>one</p>)
@@ -54,10 +85,16 @@ function FullCar({ car, user, setDOMUpdater }) {
     else {
         console.log(car)
         return (
+           <>
+            <div id="side-nav">
+                 
+                <h3 id="favorite">Favorite Cars</h3>
+            </div>
+             <div id="more-card" style={{ "maxHeight": "fit-content" }}  >
+                 {<FavoriteIcon onClick={handleLikeClick} id={ car.favorite ? "like-color" : null}/>}
 
-            <div className="car-card" style={{ "maxHeight": "fit-content" }}  >
-
-                <img src={car.photo} alt="" className="car-pic" />
+                {UpdateRequested ? <> <br /> <label>Car model: </label>   <input value={carUpdateObject.model} onChange={updateChangeHandler} placeholder={car.model} name='model'  ></input> </> : <p className="more-car-model">{car.model}</p>}
+                <img src={car.photo} alt="" className="more-car-pic" />
                 <Rating name="read-only" value={car.average_score} readOnly />
                 <br/>
                 <p>Number of reviews: {car.total_reviews}</p>
@@ -71,13 +108,31 @@ function FullCar({ car, user, setDOMUpdater }) {
                 <ReviewAdder setDOMUpdater={setDOMUpdater} car={car} user={user}  />
                 {<Reviews reviews={car.reviews} />}
                 <Link lassName="nav-link" to={"/cars"}><ArrowBackIcon onClick={() => setDOMUpdater(Math.random())}id="more-btn"/></Link>
-            </div>
-
+            </div> 
+            </>
+        
 
         )
     }
 }
 
 export default FullCar
+
+
+
+
+
+
+
+
+
+  
+
+ 
+
+
+
+
+
 
 

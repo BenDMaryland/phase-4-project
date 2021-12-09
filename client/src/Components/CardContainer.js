@@ -4,7 +4,7 @@ import CarCard from './CarCard'
 function CardContainer({ handleDeleteCar, carData, user, setDOMUpdater}) {
 
 //// Stops this function from running if carData is not correct.     
-if (carData.length == undefined || carData.length <= 1) return <p> Loading</p>
+if (carData.length == undefined || carData.length <= 1) return <p> Loading Please Wait</p>
 
 
         return (
