@@ -342,7 +342,6 @@ div.car-card:hover {
     /* display: block; */
     display: flex;
     flex-direction: column;
-    overflow: ;
     border-radius: 10px 10px 10px 10px;
     /* background-color: #adc5af; */
     /* max-width: 500px; */

@@ -69,7 +69,6 @@ function CarCard({  setDOMUpdater, car, user, onDeleteCar }) {
   //   }
  
 
-    console.log(car.owned_by.id===user.id)
 
   return (
     <div className="car-card">
