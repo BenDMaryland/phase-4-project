@@ -1,5 +1,6 @@
 import React from 'react'
 import { Rating } from '@mui/material'
+
 function Reviews({ reviews }) {
 
 
@@ -13,7 +14,7 @@ function Reviews({ reviews }) {
             <>
                 <h2>Name: {reviews[0].name}</h2>
                 <p>{reviews[0].comment}</p>
-                <Rating name="read-only" value={reviews[0].rating} readOnly />
+                <Rating name="read-only" value={reviews[0].rating}  id="review_rating" readOnly />
             </>
         )
     }
