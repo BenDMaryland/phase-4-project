@@ -6,8 +6,11 @@ import ReadMoreIcon from '@mui/icons-material/ReadMore';
 
 
 
-function CarCard({ setDOMUpdater, car, user, onDeleteCar }) {
+
+
+function CarCard({  setDOMUpdater, car, user, onDeleteCar }) {
   const [counter, setcounter] = useState(0)
+  // const [like, setlike] = useState(false)
 
   function ratingAddHandler(e) {
     if (counter == 0) { setcounter(1) }
@@ -40,10 +43,36 @@ function CarCard({ setDOMUpdater, car, user, onDeleteCar }) {
       }
     });
   }
+
+  //  const handleLikeClick = (e) => {
+  //       const options = {
+  //           method: 'PATCH',
+  //           headers: {
+  //               'Content-Type': 'application/json'
+  //           },
+  //           body: JSON.stringify({
+  //               user_id: user.id,
+  //               favorite: !car.favorite
+  //           })
+  //       };
+  //         fetch(`/cars/${car.id}`, options)
+  //           .then(resp => resp.json())
+  //           .then(data => {
+  //               if (data.success) {
+  //                   updateCar(data.data);
+  //               } else {
+  //                   console.log(data);
+  //               }
+  //           (setDOMUpdater(Math.random()))
+                
+  //           });
+  //   }
+  
     
 
   return (
     <div className="car-card">
+      {/* {<FavoriteIcon onClick={handleLikeClick} id={ car.favorite ? "like-color" : null}/>} */}
       <p id="car-model">{car.model}</p>
       <p id="car-year"> Year: {car.year}</p>
       <img src={car.photo} alt="" className="car-pic" />

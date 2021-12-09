@@ -15,16 +15,21 @@ class CarsController < ApplicationController
 
     def update
         car = find_car
-       
         car.update!(car_params)
         render json: car
     end
 
  def destroy
     car = find_car
-    car.destroy!
-    head :no_content
+    # owner = User.find(parms[:owned_by_id])
+    # if car 
+
+        car.destroy!
+        head :no_content
+    # end
+    
   end
+
 #, dependent: :destroy
 
     private 
@@ -33,9 +38,10 @@ class CarsController < ApplicationController
         Car.find(params[:id])
     end
 
+
     def car_params
        
-        params.permit(:owned_by_id, :photographed_by_id, :photo, :description, :model, :year)
+        params.permit(:owned_by_id, :photographed_by_id, :photo, :description, :favorite, :model, :year)
     end
 
 end
