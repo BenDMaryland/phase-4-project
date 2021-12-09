@@ -11,8 +11,8 @@ function Reviews({ reviews }) {
 
         return (
             <>
-                <p>Name: {reviews[0].name}</p>
-                <p> Comment: {reviews[0].comment}</p>
+                <h2>Name: {reviews[0].name}</h2>
+                <p>{reviews[0].comment}</p>
                 <Rating name="read-only" value={reviews[0].rating} readOnly />
             </>
         )
@@ -23,13 +23,11 @@ function Reviews({ reviews }) {
                 console.log(review.comment)
                 return (
                     <div key={Reviews.id}>
-                      
-                        <p >{review.name}</p>
-                        <Rating name="read-only" value={review.rating} readOnly />
-                        {review.comment == null ? null : <p> Comment: {review.comment}</p>}
 
-                    <br/>
-
+                        <h2 key={Reviews.id} >{review.name}</h2>
+                        <Rating key={Reviews.id} name="read-only" value={review.rating} readOnly />
+                        {review.comment == null ? null : <p> {review.comment}</p>}
+                        <br />
                         <br />
                     </div>
                 )

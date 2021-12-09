@@ -24,5 +24,8 @@ class Car < ApplicationRecord
       self.reviews.count
     end
 
+    def favorite_car
+        Car.all.filter{|car| car.favorite== true}
+    end
     
 end
