@@ -27,8 +27,7 @@ function TopNav({changeHanldler, submitHandler, loginDetails, user, handleLogout
                 <AppBar position="static" id="nav-container">
                     <Toolbar>
                         <Typography variant="h  6" component="div" sx={{ flexGrow: 1 }}>
-                        <img src= "/carmedialogo.jpeg"/>
-                            <img id="logo" src="/IMG_0327.heic" alt="" />
+                        <img id="logo" src= "/carmedialogo.jpeg"/>
                         </Typography>
                         <Link className="nav-link" to="/"><Button color="inherit">Home</Button></Link>
                         <Link className="nav-link" to="/cars"><Button color="inherit">Cars</Button></Link>

@@ -57,25 +57,67 @@ ford = Car.create(
     favorite: false,
     description: "You’re a different breed of cat. Hard-working. Out-of-the-box thinking. Some might even say you’re rebellious or revolutionary. The 2020 BMW i8 might just be your spirit animal in the form of a luxury hybrid sports car.")
 
+rolls = Car.create(
+    owned_by_id: saim.id,
+    photo: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2018-rolls-royce-phantom-1536152159.png?crop=1.00xw:1.00xh;0,0&resize=640:*",
+    model: "Rolls-Royce Phantom",
+    year: 2019, 
+    favorite: false,
+    description: "Cars simply don't get more opulent than the Rolls-Royce Phantom—the biggest Roller you can buy has always been the ultra-luxury benchmark. With a starting price just under half a million dollars, it better be.")
+
+aston = Car.create(
+    owned_by_id: ben.id,
+    photo: "https://www.supercars.net/blog/wp-content/uploads/2020/10/2021-Aston-Martin-V12-Speedster-001-2160-scaled.jpg",
+    model: "Aston Martin V12",
+    year: 2021, 
+    favorite: false,
+    description: "V12 Vantage S replaced the outgoing V12 Vantage in markets around the world and, with the exception of One-77, arrived as the fastest road-going Aston Martin offered at the time.")
+
+packard = Car.create(
+    owned_by_id: ben.id,
+    photo: "https://wallpaperaccess.com/full/204610.jpg",
+    model: "Packard",
+    year: 1939, 
+    favorite: false,
+    description: "Packards can arguably be considered the Rolls Royce® of North America, with an exclusive heritage of extraordinary quality and luxury, and a price tag to match.")
+
 
 puts "seeding reviews"
 
 Review.create(
     car_id: honda.id, 
     user_id: dimitri.id, 
-     comment: "Uhh that doesn't look new", 
+     comment: "love the exterior", 
      rating: 1 )
 
 Review.create(
     car_id: honda.id, 
     user_id: saim.id, 
-     comment: "that looks beat up",
+     comment: "🔥🔥🔥🔥",
       rating: 3 )
 
 Review.create(
     car_id: lambo.id, 
+    user_id: saim.id,  
+    comment: "Wow! looks awesome", 
+    rating: 5 )
+
+Review.create(
+    car_id: aston.id, 
     user_id: ben.id,  
-    comment: "Wow!", 
+    comment: "Wow! 🔥", 
+    rating: 4 )
+
+Review.create(
+    car_id: rolls.id, 
+    user_id: ben.id,  
+    comment: "my favorite car!", 
+    rating: 5 )
+
+Review.create(
+    car_id: packard.id, 
+    user_id: dimitri.id,  
+    comment: "How much did you pay for this car?", 
     rating: 5 )
 
 puts "seeding done"
