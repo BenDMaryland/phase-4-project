@@ -75,10 +75,10 @@ function ReviewAdder({ user, car, setDOMUpdater }) {
                 {updaterequested ? <button onClick={() => setupdaterequested(!updaterequested)} > Would you like to update  your review </button> : null}
                 {updaterequested ? null :
                     <form>
-                        <p> update your review !</p>
-                        <label>description</label>
+                        <h2>Update  review</h2>
+                        <label></label>
                         <textarea name="comment" onChange={commentUpdateChangeHandler} value={commentData.comment}  ></textarea>
-                        <Rating id="star-rating" name="rating" value={commentData.rating} onClick={commentUpdateChangeHandler} precision={0.5} />
+                        <div> <Rating style={{ "margin-left": "opx" }} id="star-rating" name="rating" value={parseInt(commentData.rating)} onClick={commentUpdateChangeHandler} precision={0.5} /> </div>
                         <button onClick={e => commentUpdateSubmitHandler(e)} > update</button>
                     </form>}
                 <br />
@@ -90,10 +90,12 @@ function ReviewAdder({ user, car, setDOMUpdater }) {
             <div>
                 <br />
                 <form onSubmit={e => newCommentSubmitHandler(e)} >
-                    <p>Please leave a review !</p>
-                    <label>description</label>
+                    <h2>New comment</h2>
+                    <label></label>
                     <textarea name="comment" onChange={commentUpdateChangeHandler} value={commentData.comment} ></textarea>
-                    <Rating id="star-rating" name="rating" value={commentData.rating} onClick={commentUpdateChangeHandler} defaultValue={0} precision={0.5} />
+                    <br />
+                    <Rating style={{ "textAlign": "center" }} id="star-rating" name="rating" value={parseInt(commentData.rating)} onClick={commentUpdateChangeHandler} defaultValue={0} precision={0.5} />
+                    <br />
                     <button>Comment!</button>
                 </form >
                 <br />

@@ -67,8 +67,9 @@ function CarCard({  setDOMUpdater, car, user, onDeleteCar }) {
                 
   //           });
   //   }
-  
-    
+ 
+
+    console.log(car.owned_by.id===user.id)
 
   return (
     <div className="car-card">
@@ -81,8 +82,8 @@ function CarCard({  setDOMUpdater, car, user, onDeleteCar }) {
       <p>Number of reviews: {car.total_reviews}</p>
       <Rating id="star-rating" name="half-rating" defaultValue={car.average_score} onClick={ratingAddHandler} precision={0.5}>
       </Rating>
-      <DeleteIcon id="delete-btn" onClick={handleDeleteCar} />
-      <Link lassName="nav-link" to={"/cars/" + car.id}><ReadMoreIcon onClick={() => setDOMUpdater(Math.random())} id="more-btn" /></Link>
+      {car.owned_by.id === user.id? <DeleteIcon id="delete-btn" onClick={handleDeleteCar} />: null}
+      <Link  to={"/cars/" + car.id}><ReadMoreIcon onClick={() => setDOMUpdater(Math.random())} id="more-btn" /></Link>
     </div>
   )
 }

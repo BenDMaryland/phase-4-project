@@ -22,5 +22,7 @@ class User < ApplicationRecord
         self.cars_reviewed.map {|car| car.id}
     end
   
+    
+
 
 end

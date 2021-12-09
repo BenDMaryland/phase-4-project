@@ -14,9 +14,9 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 
 
 
-function FullCar({updateCar, car, user, setDOMUpdater }) {
-
-   const [UpdateRequested, setUpdateRequested] = useState(false)
+function FullCar({ updateCar, car, user, setDOMUpdater }) {
+console.log(car)
+    const [UpdateRequested, setUpdateRequested] = useState(false)
     const [carUpdateObject, setcarUpdateObject] = useState({
     })
 
@@ -36,7 +36,7 @@ function FullCar({updateCar, car, user, setDOMUpdater }) {
         if (carUpdateObject.year === "") { carUpdateObject.model = car.model }
         if (carUpdateObject.photo === undefined) { carUpdateObject.photo = car.photo }
         if (carUpdateObject.photo === "") { carUpdateObject.model = car.model }
-      
+
         fetch(`${car.id}`, {
             method: "PATCH",
             headers: {
@@ -53,7 +53,7 @@ function FullCar({updateCar, car, user, setDOMUpdater }) {
     }
 
 
-     const handleLikeClick = (e) => {
+    const handleLikeClick = (e) => {
         const options = {
             method: 'PATCH',
             headers: {
@@ -64,7 +64,7 @@ function FullCar({updateCar, car, user, setDOMUpdater }) {
                 favorite: !car.favorite
             })
         };
-          fetch(`/cars/${car.id}`, options)
+        fetch(`/cars/${car.id}`, options)
             .then(resp => resp.json())
             .then(data => {
                 if (data.success) {
@@ -72,8 +72,8 @@ function FullCar({updateCar, car, user, setDOMUpdater }) {
                 } else {
                     console.log(data);
                 }
-            (setDOMUpdater(Math.random()))
-                
+                (setDOMUpdater(Math.random()))
+
             });
     }
 
@@ -85,32 +85,35 @@ function FullCar({updateCar, car, user, setDOMUpdater }) {
     else {
         console.log(car)
         return (
-           <>
-            <div id="side-nav">
-                 
-                <h3 id="favorite">Favorite Cars</h3>
-            </div>
-             <div id="more-card" style={{ "maxHeight": "fit-content" }}  >
-                 {<FavoriteIcon onClick={handleLikeClick} id={ car.favorite ? "like-color" : null}/>}
+            <>
+                <div id="side-nav">
 
-                {UpdateRequested ? <> <br /> <label>Car model: </label>   <input value={carUpdateObject.model} onChange={updateChangeHandler} placeholder={car.model} name='model'  ></input> </> : <p className="more-car-model">{car.model}</p>}
-                <img src={car.photo} alt="" className="more-car-pic" />
-                <Rating name="read-only" value={car.average_score} readOnly />
-                <br/>
-                <p>Number of reviews: {car.total_reviews}</p>
-                {UpdateRequested ? <> <br /> <label>Car photo url: </label>   <input value={carUpdateObject.photo} onChange={updateChangeHandler} placeholder={car.photo} name='photo'  ></input> </> : null}
-                {UpdateRequested ? <> <br /> <label>{car.owned_by.name}'s  </label>   <input value={carUpdateObject.model} onChange={updateChangeHandler} placeholder={car.model} name='model'  ></input> </> : <p>{car.owned_by.name}'s   {car.model}</p>}
-                {UpdateRequested ? <> <br /> <label>Car year: </label>   <input value={carUpdateObject.year} onChange={updateChangeHandler} placeholder={car.year} name='year'  ></input> </> : <p>Year: {car.year}</p>}
-                {UpdateRequested ? <> <br /> <label>Car description: </label>   <textarea value={carUpdateObject.description} onChange={updateChangeHandler} placeholder={car.description} name='description'  ></textarea> </> : <p>Description: {car.description}</p>}
-                {car.owned_by.id === user.id ? UpdateRequested ? <button onClick={updateSubmitHandler} > UPDATE!!!!</button> : <button type="button" onClick={() => setUpdateRequested(!UpdateRequested)} >Would You like to update?</button> : null}
-                <p>Reviews</p>
-                <p>_____________</p>
-                <ReviewAdder setDOMUpdater={setDOMUpdater} car={car} user={user}  />
-                {<Reviews reviews={car.reviews} />}
-                <Link lassName="nav-link" to={"/cars"}><ArrowBackIcon onClick={() => setDOMUpdater(Math.random())}id="more-btn"/></Link>
-            </div> 
+                    <h3 id="favorite">Favorite Cars</h3>
+                    { car.favorite_car.map((car)=>  <p>{car.model}</p>) }
+                </div>
+
+                <div id="more-card" >
+                    {<FavoriteIcon onClick={handleLikeClick} id={car.favorite ? "like-color" : null} />}
+
+                    {UpdateRequested ? <> <br /> <label>Car model: </label>   <input value={carUpdateObject.model} onChange={updateChangeHandler} placeholder={car.model} name='model'  ></input> </> : <h2 className="more-car-model">{car.model}</h2>}
+                    <img src={car.photo} alt="" className="more-car-pic" />
+                    <Rating name="read-only" value={car.average_score} readOnly />
+                    <br />
+                    <p>Number of reviews: {car.total_reviews}</p>
+                    {UpdateRequested ? <> <br /> <label>Car photo url: </label>   <input value={carUpdateObject.photo} onChange={updateChangeHandler} placeholder={car.photo} name='photo'  ></input> </> : null}
+                    {UpdateRequested ? <> <br /> <label>{car.owned_by.name}'s  </label>   <input value={carUpdateObject.model} onChange={updateChangeHandler} placeholder={car.model} name='model'  ></input> </> : <p>{car.owned_by.name}'s   {car.model}</p>}
+                    {UpdateRequested ? <> <br /> <label>Car year: </label>   <input value={carUpdateObject.year} onChange={updateChangeHandler} placeholder={car.year} name='year'  ></input> </> : <p>Year: {car.year}</p>}
+                    {UpdateRequested ? <> <br /> <label>Car description: </label>   <textarea value={carUpdateObject.description} onChange={updateChangeHandler} placeholder={car.description} name='description'  ></textarea> </> : <p>Description: {car.description}</p>}
+                    {car.owned_by.id === user.id ? UpdateRequested ? <button onClick={updateSubmitHandler} > UPDATE!!!!</button> : <button type="button" onClick={() => setUpdateRequested(!UpdateRequested)} >Would You like to update?</button> : null}
+                </div>
+                    <div className="review_container">
+                        <ReviewAdder setDOMUpdater={setDOMUpdater} car={car} user={user} />
+                        {<Reviews reviews={car.reviews} />}
+                        <Link  to={"/cars"}><ArrowBackIcon onClick={() => setDOMUpdater(Math.random())} id="more-btn" /></Link>
+                    </div>
+               
             </>
-        
+
 
         )
     }
@@ -126,9 +129,9 @@ export default FullCar
 
 
 
-  
 
- 
+
+
 
 
 
