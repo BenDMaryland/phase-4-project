@@ -15,7 +15,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 
 
 function FullCar({ updateCar, car, user, setDOMUpdater }) {
-console.log(car)
+    console.log(car)
     const [UpdateRequested, setUpdateRequested] = useState(false)
     const [carUpdateObject, setcarUpdateObject] = useState({
     })
@@ -89,7 +89,7 @@ console.log(car)
                 <div id="side-nav">
 
                     <h3 id="favorite">Favorite Cars</h3>
-                    { car.favorite_car.map((car)=>  <p>{car.model}</p>) }
+                    {car.favorite_car.map((car) => <p>{car.model}</p>)}
                 </div>
 
                 <div id="more-card" >
@@ -105,13 +105,15 @@ console.log(car)
                     {UpdateRequested ? <> <br /> <label>Car year: </label>   <input value={carUpdateObject.year} onChange={updateChangeHandler} placeholder={car.year} name='year'  ></input> </> : <p>Year: {car.year}</p>}
                     {UpdateRequested ? <> <br /> <label>Car description: </label>   <textarea value={carUpdateObject.description} onChange={updateChangeHandler} placeholder={car.description} name='description'  ></textarea> </> : <p>Description: {car.description}</p>}
                     {car.owned_by.id === user.id ? UpdateRequested ? <button onClick={updateSubmitHandler} > UPDATE!!!!</button> : <button type="button" onClick={() => setUpdateRequested(!UpdateRequested)} >Would You like to update?</button> : null}
+                    <Link to={"/cars"}><ArrowBackIcon onClick={() => setDOMUpdater(Math.random())} id="more-btn" /></Link>
+                    <ReviewAdder setDOMUpdater={setDOMUpdater} car={car} user={user} />
+
                 </div>
-                    <div className="review_container">
-                        <ReviewAdder setDOMUpdater={setDOMUpdater} car={car} user={user} />
-                        {<Reviews reviews={car.reviews} />}
-                        <Link  to={"/cars"}><ArrowBackIcon onClick={() => setDOMUpdater(Math.random())} id="more-btn" /></Link>
-                    </div>
-               
+                <div className="review_container">
+                    {<Reviews reviews={car.reviews} />}
+
+                </div>
+
             </>
 
 

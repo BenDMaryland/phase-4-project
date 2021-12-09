@@ -31,8 +31,10 @@ function ReviewAdder({ user, car, setDOMUpdater }) {
             })
         })
             .then((r) => r.json())
+            
             .then(setupdaterequested(!updaterequested))  ////// returns the state to the previous version 
-            .then(setDOMUpdater(Math.random()));
+            .then(setDOMUpdater(Math.random()))
+         
     }
 
     function newCommentSubmitHandler(e) {

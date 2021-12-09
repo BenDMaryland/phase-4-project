@@ -138,7 +138,7 @@ function App() {
         <Route path="/signup/*" element={<SignupForm newUserSubmitHandler={newUserSubmitHandler} newUserChangeHanldler={newUserChangeHanldler} newUser={newUser} />} />
         <Route exact path="/cars" element={<CardContainer setDOMUpdater={setDOMUpdater} handleDeleteCar={handleDeleteCar} user={user} carData={carData} />} />
         <Route path="/cars/*" element={<FullCar updateCar={updateCar} setDOMUpdater={setDOMUpdater} user={user} car={carData} />} />
-        <Route path="/car-form" element={<AddCarForm handleAddCar={handleAddCar} user={user}/>} />
+        <Route path="/car-form" element={<AddCarForm setDOMUpdater={setDOMUpdater} handleAddCar={handleAddCar} user={user}/>} />
       </Routes>
     </div>
   );
