@@ -12,8 +12,8 @@ function SignupForm({newUserSubmitHandler, newUserChangeHanldler, newUser}) {
                 <input type="password" className="input-box" placeholder="Password" name="password" value={newUser.password} onChange={newUserChangeHanldler}/>
                 <p> <span><input type="checkbox"/></span> I accept terms and conditions</p>
                 <button className="sign-btn">Sign up</button>
-                <p> <span><input type="checkbox"   name='photographer' onChange={newUserChangeHanldler}/></span>Photographer</p>
-                <p> <span><input type="checkbox"  onChange={newUserChangeHanldler}/></span>Car owner</p> 
+                {/* <p> <span><input type="checkbox"   name='photographer' onChange={newUserChangeHanldler}/></span>Photographer</p> */}
+                {/* <p> <span><input type="checkbox"  onChange={newUserChangeHanldler}/></span>Car owner</p>  */}
                 <p>Do you have an account? <a href="#" className="sign-in-btn">Sign in</a></p>
             </form>
         </div>

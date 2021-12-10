@@ -77,6 +77,7 @@ function FullCar({ updateCar, car, user, setDOMUpdater }) {
             });
     }
 
+
     // this is the component for rending a single car, here we can add reviews when we 
     if (car == undefined || car.length === 0) return <p>No comments </p>
     else if (car.length >= 1) {
@@ -89,7 +90,8 @@ function FullCar({ updateCar, car, user, setDOMUpdater }) {
                 <div id="side-nav">
 
                     <h3 id="favorite">Favorite Cars</h3>
-                    {car.favorite_car.map((car) => <p>{car.model}</p>)}
+                    <hr id="hr-line" />
+                    {car.favorite_car.map((car) => <p id="nav-car-model">{car.model} <br /> <img id="nav-pic" src={car.photo} alt="" /></p>)}
                 </div>
 
                 <div id="more-card" >

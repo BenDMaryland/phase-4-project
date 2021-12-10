@@ -13,6 +13,7 @@ import { formControlUnstyledClasses } from '@mui/base';
 function App() {
   // This useState is for displaying car info
   const [carData, SetCarData] = useState("")
+  // const [filterSearch, setFilterSearch] = useState(carData)
   //  This Usestate is for the current user who is loggedin
   const [user, setuser] = useState("")
   const [session, setSession] = useState("")
@@ -48,6 +49,19 @@ function App() {
       .then(data => setuser(data))
 
   }, [])
+
+  // search bar needs work 
+  
+  // useEffect(() => {
+  //   setFilterSearch(carData)
+  // },[carData])
+
+//   const handleSearch = (e) => {
+//   const filtered = carData.filter((car) => {
+//     return car.model.includes(e.target.value)
+//   })
+//   setFilterSearch(filtered)
+// }
 
 
   // Lougs a user out  and sets usestate to null 

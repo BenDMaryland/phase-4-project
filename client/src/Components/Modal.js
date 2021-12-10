@@ -25,22 +25,22 @@ function Modal({setIsModalOpen, changeHanldler, submitHandler, loginDetails }) {
                             <div>
                                 <label>Email</label>
                                 <div>
-                                    <input value={loginDetails.email} onChange={changeHanldler} name="email" type="email" />
+                                    <input className="login-input" value={loginDetails.email} onChange={changeHanldler} name="email" type="email" />
                                 </div>
                             </div>
                         </div>
                         <div>
                             <label >Password</label>
                             <div>
-                                <input onChange={changeHanldler} value={loginDetails.password} type="password" name="password" />
+                                <input className="login-input" onChange={changeHanldler} value={loginDetails.password} type="password" name="password" />
                             </div>
                         </div>
                         <button id="login-btn">Login</button>
                     </form>
 
-                    <div>
-                        <p>Not a member yet</p>
-                        <a href="">Sign Up Now!</a>
+                    <div id="not-a-member-yet">
+                        <p>Not a member yet?</p>
+                        <a id="sign-up-now-link" href="http://localhost:4000/signup">Sign Up Now!</a>
                     </div>
 
                 </div>
