@@ -8,12 +8,6 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
 
-
-
-
-
-
-
 function FullCar({ updateCar, car, user, setDOMUpdater }) {
     console.log(car)
     const [UpdateRequested, setUpdateRequested] = useState(false)
@@ -96,9 +90,10 @@ function FullCar({ updateCar, car, user, setDOMUpdater }) {
 
                 <div id="more-card" >
                     {<FavoriteIcon onClick={handleLikeClick} id={car.favorite ? "like-color" : null} />}
+                    
 
                     {UpdateRequested ? <> <br /> <label>Car model: </label>   <input value={carUpdateObject.model} onChange={updateChangeHandler} placeholder={car.model} name='model'  ></input> </> : <h2 className="more-car-model">{car.model}</h2>}
-                    <img src={car.photo} alt="" className="more-car-pic" />
+                    <Link to={"/car-pics"}><img src={car.photo} alt="" className="more-car-pic" /></Link>
                     <Rating name="read-only" value={car.average_score} readOnly />
                     <br />
                     <p>Number of reviews: {car.total_reviews}</p>

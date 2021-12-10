@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import FullCar from './Fullcar';
 import AddCarForm from './AddCarForm';
 import Home from './Home';
+import MoreCarPic from './MoreCarPic';
 import { formControlUnstyledClasses } from '@mui/base';
 
 function App() {
@@ -153,6 +154,7 @@ function App() {
         <Route exact path="/cars" element={<CardContainer setDOMUpdater={setDOMUpdater} handleDeleteCar={handleDeleteCar} user={user} carData={carData} />} />
         <Route path="/cars/*" element={<FullCar updateCar={updateCar} setDOMUpdater={setDOMUpdater} user={user} car={carData} />} />
         <Route path="/car-form" element={<AddCarForm setDOMUpdater={setDOMUpdater} handleAddCar={handleAddCar} user={user}/>} />
+        <Route path="/car-pics" element={<MoreCarPic />}></Route>
       </Routes>
     </div>
   );
