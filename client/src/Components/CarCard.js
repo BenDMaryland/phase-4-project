@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Rating from '@mui/material/Rating';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ReadMoreIcon from '@mui/icons-material/ReadMore';
+import { Avatar } from '@mui/material';
 
 
 
@@ -72,6 +73,7 @@ function CarCard({  setDOMUpdater, car, user, onDeleteCar }) {
 
   return (
     <div className="car-card">
+      {/* <Avatar/> */}
       {/* {<FavoriteIcon onClick={handleLikeClick} id={ car.favorite ? "like-color" : null}/>} */}
       <p id="car-model">{car.model}</p>
       <p id="car-year"> Year: {car.year}</p>

@@ -4,6 +4,7 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  height: 100vh;
 }
 
 #nav-container {
@@ -235,7 +236,11 @@ div.car-card {
   /* background-color: #adc5af; */
   margin-top: 60px;
   max-width: 365px;
-  padding: 15px;
+  /* padding: 15px; */
+  padding-left: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 15px;
 }
 
 div.car-card:hover {
@@ -409,4 +414,71 @@ span.MuiRating-icon.MuiRating-iconEmpty.css-1c99szj-MuiRating-icon {
 }
 
 #nav-car-model {
+}
+
+.view-more-pics {
+  /* width: 500px;
+  scroll-behavior: smooth; */
+  height: 400px;
+  margin-left: 0px;
+}
+
+#see-pics {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  overflow: auto;
+}
+
+#expand {
+  /* margin: 100%; */
+  width: 80%;
+}
+
+#carousel {
+  width: 100%;
+}
+
+.makeStyles-root-1 {
+  height: 100vh;
+}
+
+.makeStyles-indicators-4 {
+  margin-top: 300px;
+  margin-left: 150px;
+}
+
+.makeStyles-indicatorIcon-6 {
+  color: rgb(255, 255, 255);
+}
+
+#img-card {
+  height: 400px;
+  /* max-height: 480px; */
+  float: left;
+  color: black;
+  /* margin-right: 10px; */
+  margin-left: 25vw;
+  border: 2px solid black;
+  background-color: white;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* margin-bottom: 10px; */
+  border-radius: 10px 10px 10px 10px;
+  /* background-color: #adc5af; */
+  margin-top: 100px;
+  /* max-width: 365px; */
+  /* padding: 50px; */
+  /* padding-left: 10px; */
+  /* padding-right: 45px; */
+  /* padding-top: 10px; */
+  /* padding-bottom: 30px; */
+  background-image: cover;
+}
+
+.css-2s90m6-MuiAvatar-root {
+  margin-left: 5px;
 }

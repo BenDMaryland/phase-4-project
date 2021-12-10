@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Modal from "./Modal"
 import { Link } from "react-router-dom";
+import { Avatar } from '@mui/material';
 
 
 
@@ -34,7 +35,7 @@ function TopNav({changeHanldler, submitHandler, loginDetails, user, handleLogout
                         <Link className="nav-link" to="/car-form"><Button color="inherit">Add Car</Button></Link>
                         <Link className="nav-link" to="about"><Button color="inherit">About</Button></Link>
                         <Link className="nav-link" to="signup"><Button color="inherit">Signup</Button></Link>
-                        {user.name ? <Button color="inherit" onClick={handleLogout} >logout:  {user.name} </Button> : <Button onClick={toggleModal} color="inherit">Login</Button>}
+                        {user.name ? <Button color="inherit" onClick={handleLogout} >Welcome <br /> {user.name} <Avatar /></Button> : <Button onClick={toggleModal} color="inherit">Login</Button>}
 
 
                     </Toolbar>
