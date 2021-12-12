@@ -9,7 +9,6 @@ import FullCar from './Fullcar';
 import AddCarForm from './AddCarForm';
 import Home from './Home';
 import MoreCarPic from './MoreCarPic';
-import { formControlUnstyledClasses } from '@mui/base';
 
 function App() {
   // This useState is for displaying car info
@@ -51,21 +50,8 @@ function App() {
 
   }, [])
 
-  // search bar needs work 
-  
-  // useEffect(() => {
-  //   setFilterSearch(carData)
-  // },[carData])
 
-//   const handleSearch = (e) => {
-//   const filtered = carData.filter((car) => {
-//     return car.model.includes(e.target.value)
-//   })
-//   setFilterSearch(filtered)
-// }
-
-
-  // Lougs a user out  and sets usestate to null 
+  // Logs a user out  and sets use state to null 
   function handleLogout() {
     fetch("/logout",
       { method: "DELETE" })

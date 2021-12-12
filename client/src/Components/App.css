@@ -314,8 +314,8 @@ div.car-card:hover {
   /* max-height: 480px; */
   float: left;
   color: black;
-  margin-right: 10px;
-  margin-left: 30vw;
+  /* margin-right: 10px; */
+  margin-left: 20vw;
   border: 2px solid black;
   background-color: white;
   overflow-y: auto;

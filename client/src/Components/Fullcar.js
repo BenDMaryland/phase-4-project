@@ -101,7 +101,7 @@ function FullCar({ updateCar, car, user, setDOMUpdater }) {
                     {UpdateRequested ? <> <br /> <label>{car.owned_by.name}'s  </label>   <input value={carUpdateObject.model} onChange={updateChangeHandler} placeholder={car.model} name='model'  ></input> </> : <p>{car.owned_by.name}'s   {car.model}</p>}
                     {UpdateRequested ? <> <br /> <label>Car year: </label>   <input value={carUpdateObject.year} onChange={updateChangeHandler} placeholder={car.year} name='year'  ></input> </> : <p>Year: {car.year}</p>}
                     {UpdateRequested ? <> <br /> <label>Car description: </label>   <textarea value={carUpdateObject.description} onChange={updateChangeHandler} placeholder={car.description} name='description'  ></textarea> </> : <p>Description: {car.description}</p>}
-                    {car.owned_by.id === user.id ? UpdateRequested ? <button onClick={updateSubmitHandler} > UPDATE!!!!</button> : <button type="button" onClick={() => setUpdateRequested(!UpdateRequested)} >Would You like to update?</button> : null}
+                    {car.owned_by.id === user.id ? UpdateRequested ? <button onClick={updateSubmitHandler} >Update</button> : <button type="button" onClick={() => setUpdateRequested(!UpdateRequested)} >Would You like to update?</button> : null}
                     <Link to={"/cars"}><ArrowBackIcon onClick={() => setDOMUpdater(Math.random())} id="more-btn" /></Link>
                     <ReviewAdder setDOMUpdater={setDOMUpdater} car={car} user={user} />
 

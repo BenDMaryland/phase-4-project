@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react'
-import { Rating } from '@mui/material'
+import { Rating, Button } from '@mui/material'
 
 function ReviewAdder({ user, car, setDOMUpdater }) {
 
@@ -98,7 +98,7 @@ function ReviewAdder({ user, car, setDOMUpdater }) {
                     <br />
                     <Rating style={{ "textAlign": "center" }} id="star-rating" name="rating" value={parseInt(commentData.rating)} onClick={commentUpdateChangeHandler} defaultValue={0} precision={0.5} />
                     <br />
-                    <button>Comment!</button>
+                    <Button> Add Comment</Button>
                 </form >
                 <br />
             </div>

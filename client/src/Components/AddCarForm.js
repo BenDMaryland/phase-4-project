@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 
-function AddCarForm({ handleAddCar, user, setDOMUpdater }) {
-  const [errors, seterrors] = useState("")
+function AddCarForm({ handleAddCar, user, }) {
+  
   const initialState = {
     model: "",
     year: "",
@@ -54,7 +54,6 @@ function AddCarForm({ handleAddCar, user, setDOMUpdater }) {
   return (
     <div>
       <div className="sign-up-form">
-        {/* <AccountCircleIcon id="user-icon"/> */}
         <h1>Add New Car <br /><span id="fill-out-form">Please fill this form to add new car</span></h1>
         <form onSubmit={handleSubmit} >
           <input className="input-box" placeholder="Model" name="model" onChange={handleChange} value={formData.model} />
