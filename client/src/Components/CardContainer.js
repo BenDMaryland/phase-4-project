@@ -9,7 +9,6 @@ if (carData.length == undefined || carData.length <= 1) return <p> Loading Pleas
 
         return (
         <div>
-            {/* <input onChange={handleSearch} type="text" /> */}
            <div>{carData.map((car) => {
                return (
                    <CarCard setDOMUpdater={setDOMUpdater} key={car.id} user={user} car={car} onDeleteCar={handleDeleteCar}/>

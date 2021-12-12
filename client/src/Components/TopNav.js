@@ -35,7 +35,7 @@ function TopNav({changeHanldler, submitHandler, loginDetails, user, handleLogout
                         <Link className="nav-link" to="/car-form"><Button color="inherit">Add Car</Button></Link>
                         <Link className="nav-link" to="about"><Button color="inherit">About</Button></Link>
                         <Link className="nav-link" to="signup"><Button color="inherit">Signup</Button></Link>
-                        {user.name ? <Button color="inherit" onClick={handleLogout} >Welcome <br /> {user.name} <Avatar /></Button> : <Button onClick={toggleModal} color="inherit">Login</Button>}
+                        {user.name ? <Button color="inherit" onClick={handleLogout} >Welcome <br /> {user.name} <Avatar src="https://variety.com/wp-content/uploads/2015/07/naruto_movie-lionsgate.jpg?w=681&h=383&crop=1" /></Button> : <Button onClick={toggleModal} color="inherit">Login</Button>}
 
 
                     </Toolbar>
